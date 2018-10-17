@@ -13,7 +13,18 @@
  -->
   
   <select id="getEmpById" resultType="com.lmg.mybatis.bean.Employee">
-      select id,last_name lastName,email,gender from tbl_employee where id = #{id}
+      select * from tbl_employee where id = #{id}
   </select>
+  
+  <select id="getEmpById" resultType="com.lmg.mybatis.bean.Employee"
+  	databaseId="mysql">
+      select * from tbl_employee where id = #{id}
+  </select>
+  
+  <select id="getEmpById" resultType="com.lmg.mybatis.bean.Employee"
+  	databaseId="oracle">
+      select EMPLOYEE_ID id,LAST_NAME lastName,EMAIL email from tbl_employee where id = #{id}
+  </select>
+  
   
 </mapper>
